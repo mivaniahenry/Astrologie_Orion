@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Joan&family=Montserrat:wght@100;400&family=Raleway:wght@100&display=swap');
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -10px;
+    border-bottom: 1px solid #d2b48c;
+}
+nav a{
+    font-family: 'joan', serif;
+    color: black;
+}
+nav .ruban img{
+    height: 75px;
+    padding: 10px;
+}
+nav .ruban{
+    display: flex;
+    align-items: center;
+}
+nav .menu{
+    display: flex;
+    color: black;
+    font-size: large;
+    padding: 30px;
+}
+nav h1{
+    color: rgb(255, 114, 142);
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+.menu a{
+    margin-left: 10px;
+}
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+main{
+    font-size: xx-large;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgb(255, 114, 142);
+    margin-bottom: 10px;
+}
+footer{
+    background-color: #d2b48c;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-family: 'joan', serif;
+}
+main img{
+    height: 500px;
+    width: 500px;
+}
+.rubrique{
+    display: flex;
+    justify-content: space-evenly;
+}
+.texte{
+    display: inline-block;
+    vertical-align: top;
+    width: 40%;
+    padding-top: 75px;
+    font-style: italic;
+    color: dimgrey;
+}
+.imagemain{
+    display: inline-block;
+    vertical-align: top;
+}
+@media (max-width: 700px) {
+    body{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "nav""main""footer" ;
+    }
+    nav{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .menu{
+        display: flex;
+        margin-left: 8%;
+    }
+    .rubrique{
+        display: block;
+
+    }
+    .rubrique img{
+        padding-left: 10px;
+    }
+    .texte{
+        text-align: justify;
+        width: 75%;
+    }
+    footer{
+        display: block;
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/3_MonHoroscope.css" />
+    <title>Mon Horoscope</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.querySelector('form[name="Mon horoscope"]').onsubmit = function (event) {
+                event.preventDefault();
+
+                // Calcul pour déterminer le signe approprié
+                var dateDeNaissance = document.getElementById('ddn').value;
+                var signe = calculZodiaque(new Date(dateDeNaissance));
+
+                // Redirection au signe correspondant à la ddn.
+                if (signe !== '') {
+                    window.location.href = 'signe_' + signe + '.html';
+                } else {
+                    alert('Veuillez entrer une date de naissance valide.');
+                }
+            };
+
+            function calculZodiaque(ddn) {
+                var mois = ddn.getMonth() + 1;
+                var jour = ddn.getDate();
+                if ((mois == 3 && jour >= 21) || (mois == 4 && jour <= 19)) { return 'belier'; }
+                if ((mois == 4 && jour >= 20) || (mois == 5 && jour <= 20)) { return 'taureau'; }
+                if ((mois == 5 && jour >= 21) || (mois == 6 && jour <= 20)) { return 'gemeaux'; }
+                if ((mois == 6 && jour >= 21) || (mois == 7 && jour <= 22)) { return 'cancer'; }
+                if ((mois == 7 && jour >= 23) || (mois == 8 && jour <= 22)) { return 'lion'; }
+                if ((mois == 8 && jour >= 23) || (mois == 9 && jour <= 22)) { return 'vierge'; }
+                if ((mois == 9 && jour >= 23) || (mois == 10 && jour <= 22)) { return 'balance'; }
+                if ((mois == 10 && jour >= 23) || (mois == 11 && jour <= 21)) { return 'scorpion'; }
+                if ((mois == 11 && jour >= 22) || (mois == 12 && jour <= 21)) { return 'sagittaire'; }
+                if ((mois == 12 && jour >= 22) || (mois == 1 && jour <= 19)) { return 'capricorne'; }
+                if ((mois == 1 && jour >= 20) || (mois == 2 && jour <= 18)) { return 'verseau'; }
+                if ((mois == 2 && jour >= 19) || (mois == 3 && jour <= 20)) { return 'poisson'; }
+                return '';
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <nav>
+        <div class="ruban">
+            <a href="index.html#Accueil"><img src="images/Orion logo officiel.jpg" alt="Astrologie Orion"></a>
+            <h1>Astrologie Orion</h1>
+        </div>
+        <div class="menu">
+            <a href="index.html#Accueil">Accueil</a>
+            <a href="APropos.html">À propos</a>
+            <a href="MonHoroscope.html">Mon horoscope</a>
+            <a href="index.html#Joindre">Nous joindre</a>
+        </div>
+    </nav>
+    <main>
+        <h1>Découvrez votre horoscope du jour</h1>
+        <p>Veuillez saisir votre date de naissance</p>
+        <div class="formulaire">
+            <form name="Mon horoscope" method="POST">
+                <p>Date de naissance : <input type="date" id="ddn" name="dateDeNaissance"></p>
+                <p><input type="submit" value="Soumettre"> <input type="reset" value="Effacer"></p>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <small><sup>&copy</sup>Astrologie Orion, tous droits réservés</small><br />
+        <small>Dernière mise à jour le 20 juin 2022<small>
+    </footer>
+    </footer>
+</body>
+
+</html>

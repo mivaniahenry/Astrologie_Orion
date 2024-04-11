@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Joan&family=Montserrat:wght@100;400&family=Raleway:wght@100&display=swap');
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: -10px;
+    border-bottom: 1px solid #d2b48c;
+}
+nav a{
+    font-family: 'joan', serif;
+    color: black;
+}
+nav .ruban img{
+    height: 75px;
+    padding: 10px;
+}
+nav .ruban{
+    display: flex;
+    align-items: center;
+}
+nav .menu{
+    display: flex;
+    color: black;
+    font-size: large;
+    padding: 30px;
+}
+nav h1{
+    color: rgb(255, 114, 142);
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+}
+.menu a{
+    margin-left: 10px;
+}
+h1{
+    color: #d2b48c;
+    font-family: 'Montserrat', sans-serif;
+}
+p{
+    font-family: 'Montserrat', sans-serif;
+}
+main{
+    border-bottom: 1px solid rgb(255, 114, 142);
+    margin-bottom: 10px;
+}
+.conteneur{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 20em;
+    padding: 40px;
+    margin-top: 20px;
+    background-color: rgb(255, 246, 247);
+}
+.conteneur img{
+    height: 500px;
+    width: 500px;
+}
+.conteneur p{
+    font-size: x-large;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #d2b48c;
+    padding-top: 10px;
+    font-family: 'joan', serif;
+}
+button{
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #d1bea4;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+@media (max-width: 700px) {
+
+    body{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "nav""main""footer" ;
+    }
+    nav{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .menu{
+        display: flex;
+        margin-left: 8%;
+    }
+    .conteneur{
+        display: block;
+        padding-right: 21%;
+        text-align: justify;
+    }
+    footer{
+        display: block;
+    }
+    footer p{
+        width: auto;
+    }
+    
+}
